@@ -11,6 +11,7 @@ Flash card app about the brain
 
 
 <img src="https://i.imgur.com/cav7wSH.gif" width=200><br>
+<img src="https://i.imgur.com/aHByOsx.mp4" width=200><br>
 
 
 
@@ -21,6 +22,6 @@ Flash card app about the brain
 - [x] Build in logic to show the answer side when the card is tapped
 - [x] Push code to GitHub
 ## Optional
-- [ ] Toggle the flashcard between the question side and the answer side
-- [ ] Style the question and answer side of the card to better distinguish between the two sides
-- [ ] Add selectable multiple choice answers beneath the card
+- [x] Toggle the flashcard between the question side and the answer side
+- [x] Style the question and answer side of the card to better distinguish between the two sides
+- [x] Add selectable multiple choice answers beneath the card
