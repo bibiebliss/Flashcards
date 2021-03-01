@@ -11,7 +11,7 @@ Flash card app about the brain
 
 
 <img src="https://i.imgur.com/cav7wSH.gif" width=200><br>
-<img src="https://i.imgur.com/aHByOsx.mp4" width=200><br>
+<img src="https://i.imgur.com/QtBmHuA.gif" width=200><br>
 
 
 
