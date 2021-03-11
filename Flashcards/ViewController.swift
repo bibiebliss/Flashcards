@@ -25,9 +25,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
+<<<<<<< HEAD
     @IBOutlet weak var questionTextField: UITextField!
     @IBOutlet weak var answerTextField: UITextField!
     
+=======
+>>>>>>> b37c4a77eb8cb25f50d1f8050f9264be7acfbf6f
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -58,11 +61,14 @@ class ViewController: UIViewController {
         }
     }
     
+<<<<<<< HEAD
     func updateFlashcard(question: String, answer: String) {
         backLabel.text = answer
         frontLabel.text = question
     }
     
+=======
+>>>>>>> b37c4a77eb8cb25f50d1f8050f9264be7acfbf6f
     @IBAction func didTapOptionOne(_ sender: Any) {
         button1.isHidden = true
     }
@@ -73,11 +79,14 @@ class ViewController: UIViewController {
     @IBAction func didTapOptionThree(_ sender: Any) {
         button3.isHidden = true
     }
+<<<<<<< HEAD
     @IBAction func didTapOnDone(_ sender: Any) {
         let questionText = questionTextField.text
         let answerText = answerTextField.text
         
         
     }
+=======
+>>>>>>> b37c4a77eb8cb25f50d1f8050f9264be7acfbf6f
 }
 
