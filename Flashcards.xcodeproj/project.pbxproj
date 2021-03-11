@@ -15,6 +15,7 @@
 		A9788B2425E4683600795B2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9788B2225E4683600795B2C /* LaunchScreen.storyboard */; };
 		A9788B2F25E4683700795B2C /* FlashcardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9788B2E25E4683700795B2C /* FlashcardsTests.swift */; };
 		A9788B3A25E4683700795B2C /* FlashcardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9788B3925E4683700795B2C /* FlashcardsUITests.swift */; };
+		A9B9154725F6EEFB00B8DE50 /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B9154625F6EEFB00B8DE50 /* CreationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		A9788B3525E4683700795B2C /* FlashcardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashcardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9788B3925E4683700795B2C /* FlashcardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsUITests.swift; sourceTree = "<group>"; };
 		A9788B3B25E4683700795B2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9B9154625F6EEFB00B8DE50 /* CreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				A9788B1925E4683600795B2C /* SceneDelegate.swift */,
 				A9788B1B25E4683600795B2C /* ViewController.swift */,
 				A9788B1D25E4683600795B2C /* Main.storyboard */,
+				A9B9154625F6EEFB00B8DE50 /* CreationViewController.swift */,
 				A9788B2025E4683600795B2C /* Assets.xcassets */,
 				A9788B2225E4683600795B2C /* LaunchScreen.storyboard */,
 				A9788B2525E4683600795B2C /* Info.plist */,
@@ -261,6 +264,7 @@
 				A9788B1C25E4683600795B2C /* ViewController.swift in Sources */,
 				A9788B1825E4683600795B2C /* AppDelegate.swift in Sources */,
 				A9788B1A25E4683600795B2C /* SceneDelegate.swift in Sources */,
+				A9B9154725F6EEFB00B8DE50 /* CreationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

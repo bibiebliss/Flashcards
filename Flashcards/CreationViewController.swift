@@ -24,6 +24,10 @@ class CreationViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+     */
+     @IBAction func didTapOnCancel(_ sender: Any) {
+        dismiss(animated: true)
+     }
+     
 
 }
