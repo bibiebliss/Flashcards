@@ -8,16 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    class CreationViewController: UIViewController{
-        var flashcardsController: ViewController!
         
-        
-        override func viewDidLoad(){
-            super.viewDidLoad()
-            
-        }
-    }
     
     @IBOutlet weak var backLabel: UILabel!
     @IBOutlet weak var frontLabel: UILabel!
@@ -25,12 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
-<<<<<<< HEAD
-    @IBOutlet weak var questionTextField: UITextField!
-    @IBOutlet weak var answerTextField: UITextField!
-    
-=======
->>>>>>> b37c4a77eb8cb25f50d1f8050f9264be7acfbf6f
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -52,6 +38,17 @@ class ViewController: UIViewController {
         button3.layer.cornerRadius = 20.0
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navigationController = segue.destination as! UINavigationController
+        let creationController = navigationController.topViewController as! CreationViewController
+        
+        creationController.flashcardsController = self
+        if segue.identifier == "EditSegue"{
+        creationController.initialQuestion = frontLabel.text
+        creationController.initialAnswer = backLabel.text
+        }
+    }
+    
     @IBAction func didTapOnFlashcard(_ sender: Any) {
         if(frontLabel.isHidden){
             frontLabel.isHidden = false
@@ -60,15 +57,15 @@ class ViewController: UIViewController {
             frontLabel.isHidden = true
         }
     }
-    
-<<<<<<< HEAD
-    func updateFlashcard(question: String, answer: String) {
+    func updateFlashcard(question: String, answer: String, extraAnswerOne: String?, extraAnswerTwo: String?) {
         backLabel.text = answer
         frontLabel.text = question
+        
+        button1.setTitle(extraAnswerOne, for: .normal)
+        button2.setTitle(answer, for: .normal)
+        button3.setTitle(extraAnswerTwo, for: .normal)
     }
     
-=======
->>>>>>> b37c4a77eb8cb25f50d1f8050f9264be7acfbf6f
     @IBAction func didTapOptionOne(_ sender: Any) {
         button1.isHidden = true
     }
@@ -79,14 +76,6 @@ class ViewController: UIViewController {
     @IBAction func didTapOptionThree(_ sender: Any) {
         button3.isHidden = true
     }
-<<<<<<< HEAD
-    @IBAction func didTapOnDone(_ sender: Any) {
-        let questionText = questionTextField.text
-        let answerText = answerTextField.text
-        
-        
-    }
-=======
->>>>>>> b37c4a77eb8cb25f50d1f8050f9264be7acfbf6f
+
 }
 
