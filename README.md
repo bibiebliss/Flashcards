@@ -8,7 +8,7 @@ Update to Flash Card app
 ### App Walk-though
 
 
-<img src="https://i.imgur.com/Pysi795.gif" width=200><br>
+<img src="https://i.imgur.com/atK5tMQ.gif" width=200><br>
 
 
 
