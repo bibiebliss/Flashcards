@@ -116,7 +116,11 @@ class ViewController: UIViewController {
         let currentFlashcard = flashcards[currentIndex]
         frontLabel.text = currentFlashcard.question
         backLabel.text = currentFlashcard.answer
+        button1.setTitle(currentFlashcard.extraAnswerOne, for: .normal)
+        button2.setTitle(currentFlashcard.answer, for: .normal)
+        button3.setTitle(currentFlashcard.extraAnswerTwo, for: .normal)
     }
+    
     
     @IBAction func didTapOnDelete(_ sender: Any) {
         let alert = UIAlertController(title: "Delete flashcard", message: "Are you sure you want to delete it?", preferredStyle: .actionSheet)
