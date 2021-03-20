@@ -7,7 +7,7 @@ Update to Flashcards app
 ### App Walk-though
 
 
-<img src="YOUR_GIF_URL_HERE" width=200><br>
+<img src="https://i.imgur.com/5TiEdRB.gif" width=200><br>
 
 
 
@@ -19,6 +19,7 @@ Update to Flashcards app
 - [x] User can delete a flashcard
 - [x] User can edit existing flashcard
 - [x] User can store multiple choice questions
+
 ## Lab 2
 
 ### App Description
