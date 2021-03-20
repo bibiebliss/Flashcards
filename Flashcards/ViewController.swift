@@ -10,6 +10,8 @@ import UIKit
 struct Flashcard {
     var question: String
     var answer: String
+    var extraAnswerOne: String
+    var extraAnswerTwo: String
 }
 class ViewController: UIViewController {
         
@@ -47,7 +49,7 @@ class ViewController: UIViewController {
         
         readSavedFlashcards()
         if flashcards.count == 0 {
-        updateFlashcard(question: "Where is the cuddle chemical released from", answer: "Hypothalamus", extraAnswerOne: "Hippocampus", extraAnswerTwo: "Amygdala")
+            updateFlashcard(question: "Where is the cuddle chemical released from", answer: "Hypothalamus", extraAnswerOne: "Hippocampus", extraAnswerTwo: "Amygdala", isExisting: false)
         } else {
             updateLabels()
             updateNextPrevButtons()
@@ -73,21 +75,22 @@ class ViewController: UIViewController {
             frontLabel.isHidden = true
         }
     }
-    func updateFlashcard(question: String, answer: String, extraAnswerOne: String?, extraAnswerTwo: String?) {
-        let flashcard = Flashcard(question: question, answer: answer)
+    func updateFlashcard(question: String, answer: String, extraAnswerOne: String, extraAnswerTwo: String, isExisting: Bool) {
+        let flashcard = Flashcard(question: question, answer: answer, extraAnswerOne: extraAnswerOne, extraAnswerTwo: extraAnswerTwo)
         backLabel.text = flashcard.answer
         frontLabel.text = flashcard.question
-        
+        button1.setTitle(extraAnswerOne, for: .normal)
+        button2.setTitle(answer, for: .normal)
+        button3.setTitle(extraAnswerTwo, for: .normal)
+        if isExisting {
+            flashcards[currentIndex] = flashcard
+        } else {
         flashcards.append(flashcard)
-        
         print("Added new flashcard")
         print("we currently have \(flashcards.count) flashcards")
         currentIndex = flashcards.count - 1
         print("Our current index is \(currentIndex)")
-        
-        button1.setTitle(extraAnswerOne, for: .normal)
-        button2.setTitle(answer, for: .normal)
-        button3.setTitle(extraAnswerTwo, for: .normal)
+        }
         
         updateNextPrevButtons()
         updateLabels()
@@ -121,9 +124,21 @@ class ViewController: UIViewController {
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { action in self.deleteCurrentFlashcard()
         }
         alert.addAction(deleteAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true)
     }
     func deleteCurrentFlashcard(){
+        flashcards.remove(at: currentIndex)
         
+        if currentIndex > flashcards.count - 1 {
+            currentIndex = flashcards.count - 1
+        }
+        updateNextPrevButtons()
+        updateLabels()
+        saveAllFlashcardsToDisk()
     }
     
     @IBAction func didTapOptionOne(_ sender: Any) {
@@ -151,7 +166,7 @@ class ViewController: UIViewController {
     func saveAllFlashcardsToDisk() {
         
         let dictionaryArray = flashcards.map { (card) -> [String: String] in
-            return ["question": card.question, "answer": card.answer]
+            return ["question": card.question, "answer": card.answer, "extraAnswerOne": card.extraAnswerOne, "extraAnswerTwo": card.extraAnswerTwo]
         }
         UserDefaults.standard.set(dictionaryArray, forKey: "flashcards")
         
@@ -161,7 +176,7 @@ class ViewController: UIViewController {
     
     func readSavedFlashcards(){
         if let dictionaryArray = UserDefaults.standard.array(forKey: "flashcards") as? [[String: String]]{
-            let savedCards = dictionaryArray.map {dictionary -> Flashcard in return Flashcard(question: dictionary["question"]!, answer: dictionary["answer"]!)
+            let savedCards = dictionaryArray.map {dictionary -> Flashcard in return Flashcard(question: dictionary["question"]!, answer: dictionary["answer"]!, extraAnswerOne: dictionary["extraAnswerOne"]!, extraAnswerTwo: dictionary["extraAnswerTwo"]!)
             }
             
             flashcards.append(contentsOf: savedCards)
