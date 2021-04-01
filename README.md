@@ -7,7 +7,7 @@
 Update to Flashcards app
 
 ### App Walk-though
-<img src="https://i.imgur.com/a0HvQrj.gif width=200><br>
+<img src="https://i.imgur.com/a0HvQrj.gif" width=200><br>
           
 <img src="https://i.imgur.com/5lCVruw.gif" width=200><br>
 
